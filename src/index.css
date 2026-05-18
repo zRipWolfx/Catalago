@@ -1,0 +1,79 @@
+/* ── Paleta basada en el logo TechStore PC ── */
+:root {
+  /* Azul marino (color principal del logo) */
+  --navy-900: #0d1f35;
+  --navy-800: #1a3a5c;
+  --navy-700: #1e4a73;
+  --navy-600: #235a8a;
+  --navy-500: #2d6fa5;
+  --navy-400: #4a87bd;
+  --navy-300: #7aaed4;
+  --navy-200: #b3d0e8;
+  --navy-100: #e0eef8;
+  --navy-50:  #f0f7ff;
+
+  /* Azul cian/eléctrico (acento del logo — "PC") */
+  --cyan-600: #0077a8;
+  --cyan-500: #0096c7;
+  --cyan-400: #00b4d8;
+  --cyan-300: #48cae4;
+  --cyan-200: #90e0ef;
+  --cyan-100: #caf0f8;
+
+  /* Superficies light */
+  --bg:        #ffffff;
+  --bg-2:      #f5f8fc;
+  --bg-3:      #ebf2f9;
+  --surface:   #ffffff;
+  --border:    #dce8f2;
+  --border-2:  #c3d8eb;
+
+  /* Texto */
+  --text:      #0d1f35;
+  --text-2:    #1a3a5c;
+  --text-3:    #4a6c8a;
+  --text-4:    #7a9ab8;
+
+  /* Aliases semánticos */
+  --primary:   var(--navy-800);
+  --accent:    var(--cyan-400);
+  --white:     #ffffff;
+  --black:     #0d1f35;
+  --glow:      rgba(0, 180, 216, 0.25);
+  --green:     #16a34a;
+  --green-bg:  #dcfce7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Nunca overflow horizontal */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Evita scroll horizontal en móvil */
+  max-width: 100vw;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-3); }
+::-webkit-scrollbar-thumb { background: var(--cyan-400); border-radius: 3px; }
+
+button  { cursor: pointer; border: none; outline: none; font-family: inherit; }
+input, select { font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Utility — sin overflow horizontal global */
+* { min-width: 0; }

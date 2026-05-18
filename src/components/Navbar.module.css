@@ -1,0 +1,364 @@
+/* ══════════════════════════════════════
+   NAVBAR — TechStore PC
+   Paleta: Navy #1a3a5c + Cian #00b4d8
+   ══════════════════════════════════════ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(13, 31, 53, 0.08);
+  width: 100%;
+}
+
+/* ── Top bar ── */
+.topBar {
+  background: var(--navy-800);
+  padding: 6px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.topBarInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.topBarText {
+  font-size: 11px;
+  color: var(--navy-200);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'DM Mono', monospace;
+  white-space: nowrap;
+}
+
+.topBarContact {
+  font-size: 11px;
+  color: var(--navy-200);
+  white-space: nowrap;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Nav principal ── */
+.nav {
+  padding: 8px 0;
+  background: var(--white);
+  width: 100%;
+}
+
+.navInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  max-width: 180px;
+}
+
+/* ── Search ── */
+.searchForm {
+  flex: 1;
+  display: flex;
+  max-width: 560px;
+  background: var(--bg-2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 0;
+}
+
+.searchForm:focus-within {
+  border-color: var(--cyan-400);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 14px;
+  min-width: 0;
+}
+
+.searchInput::placeholder { color: var(--text-4); }
+
+.searchBtn {
+  background: var(--navy-800);
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.searchBtn:hover { background: var(--cyan-500); }
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.cartBtn {
+  position: relative;
+  background: var(--bg-3);
+  border: 1.5px solid var(--border);
+  color: var(--navy-800);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.cartBtn:hover {
+  background: var(--cyan-100);
+  border-color: var(--cyan-400);
+  color: var(--navy-800);
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--cyan-400);
+  color: var(--navy-900);
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuBtn {
+  display: none;
+  background: var(--bg-3);
+  border: 1.5px solid var(--border);
+  color: var(--navy-800);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.menuBtn:hover {
+  background: var(--navy-50);
+  border-color: var(--navy-400);
+}
+
+/* ── Category strip — solo desktop ── */
+.catStrip {
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.catStrip::-webkit-scrollbar { display: none; }
+
+.catStripInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 7px 16px;
+  display: flex;
+  gap: 6px;
+  /* No hacer width: max-content → puede causar overflow en móvil */
+}
+
+.catChip {
+  background: transparent;
+  border: 1.5px solid var(--border-2);
+  color: var(--text-3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.catChip:hover {
+  background: var(--navy-50);
+  border-color: var(--cyan-400);
+  color: var(--navy-800);
+}
+
+/* ── Mobile menu drawer ── */
+.mobileMenu {
+  display: none;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  max-height: 75vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Search móvil */
+.mobileSearch {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileSearchWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+
+.mobileSearchWrap:focus-within {
+  border-color: var(--cyan-400);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.12);
+}
+
+.mobileSearchIcon {
+  color: var(--text-4);
+  flex-shrink: 0;
+}
+
+.mobileSearchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 15px;
+  min-width: 0;
+}
+
+.mobileSearchInput::placeholder { color: var(--text-4); }
+
+/* Toggle categorías */
+.catToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--navy-800);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.catToggle:hover { background: var(--bg-2); }
+
+.catToggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Lista categorías móvil */
+.mobileCats {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileCatItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-2);
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileCatItem:last-child { border-bottom: none; }
+
+.mobileCatItem:hover {
+  background: var(--navy-50);
+  color: var(--navy-800);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Ocultar search desktop y strip */
+  .searchForm { display: none; }
+  .catStrip   { display: none; }
+  /* Mostrar hamburger */
+  .menuBtn    { display: flex; }
+  /* Mostrar mobile menu */
+  .mobileMenu { display: block; }
+
+  /* Logo más pequeño */
+  .logoImg { height: 38px; max-width: 140px; }
+
+  /* Top bar más compacto */
+  .topBarContact { display: none; }
+  .topBarText    { font-size: 10px; }
+}
+
+@media (max-width: 420px) {
+  .logoImg { height: 32px; max-width: 110px; }
+  .cartBtn, .menuBtn { width: 38px; height: 38px; }
+  .navInner { gap: 8px; padding: 0 12px; }
+}
